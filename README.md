@@ -14,10 +14,19 @@ This represents a physical library. It's actually provided by different classes 
 
 Provides functions like:
 * **login(userid, password)** - accepts login credentials, returns a borrower object.
-* **search(query=None, title=None, author=None)** - performs a search, returning a (potentially empty) list of items. Optionally, search only within the title and / or author attributes.
+* **search(query=None, title=None, author=None, ean=None)** - performs a search, returning a (potentially empty) list of items. Optionally, search only within the title and / or author attributes.
 * **get_item(id)** - gets an item, where the id is an EAN (ISBN-13) or implementation-specific id.
 
 Also, provides functions for the borrower object (see below).
+
+### search data structure ###
+
+A dictionary with the following keys:
+
+* A string containing the EAN / ISBN-13 (or an implementation specific id - something that makes it possible to use get_item for more information).
+* A string containing the title.
+* A string containing the name(s) of the author(s) / artist(s) / key actor(s).
+* A string containing the type of item in lower case, for example, book, periodical, dvd, cd, bluray, etc. This list is not intended to be complete.
 
 ## Borrower object ##
 
@@ -65,6 +74,6 @@ This refers to an item. While the item is held by a library as-per the copies (a
 * **reservations** _(optional)_ - the number of unfufilled reservations.
 * **summary** _(optional)_ - the summary, such as the abstract or blurb.
 * **title** - the title of the item.
-* **type** - the type of item in lower case, for example, book, periodical, dvd, cd, bluray, etc. This list is not intended to be complete.
+* **type** - the type of item in lower case, for example, book, ebook, periodical, dvd, cd, bluray, etc. This list is not intended to be complete.
 * **url** _(optional)_ - the URL associated with the item.
 * **volume** _(optional)_ - the volume of the publication.
