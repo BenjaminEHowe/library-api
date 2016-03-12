@@ -14,7 +14,7 @@ This represents a physical library. It's actually provided by different classes 
 
 Provides functions like:
 * **login(userid, password)** - accepts login credentials. On success `self.authenticated` is set to `True`, and `True` is returned.
-* **search(query=None, title=None, author=None, ean=None)** - performs a search, returning a (potentially empty) list of items. Optionally, search only within the title and / or author attributes.
+* **search(query=None, title=None, author=None, ean=None)** - performs a search, returning a (potentially empty) list of items. Optionally, search only within the title, author, or ean attributes.
 * **get_item(id)** - gets an item, where the id is an EAN (ISBN-13) or implementation-specific id.
 
 Once authenticated using `login`, the following functions can also be used (attempting to use them without authenticating - i.e. when `not self.authenticated` - will raise `NotAuthenticatedError`:
