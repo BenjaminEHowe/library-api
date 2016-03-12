@@ -1,6 +1,6 @@
 # library-api #
 
-An API to talk to libraries developed at Brumhack 4.0. We're planning to support SirsiDynix Enterprise and EBSCO Discovery - support for other library software will be added  as requested.
+An API to talk to libraries developed at Brumhack 4.0. We're planning to support SirsiDynix Enterprise and WebPAC PRO - support for other library software will be added  as requested.
 
 # Specification #
 
