@@ -29,7 +29,7 @@ A dictionary with the following keys:
 
 * A string containing the EAN / ISBN-13 (or an implementation specific id - something that makes it possible to use get_item for more information).
 * A string containing the title.
-* A string containing the name(s) of the author(s) / artist(s) / key actor(s).
+* A list of strings containing the name(s) of the author(s) / artist(s) / key actor(s).
 * A string containing the type of item in lower case, for example, book, ebook, periodical, dvd, cd, bluray, etc. This list is not intended to be complete.
 
 ### `list_items` data structure ###
