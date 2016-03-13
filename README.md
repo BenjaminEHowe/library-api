@@ -30,7 +30,7 @@ A dictionary with the following keys:
 * A string containing the EAN / ISBN-13 (or an implementation specific id - something that makes it possible to use get_item for more information).
 * A string containing the title.
 * A list of strings containing the name(s) of the author(s) / artist(s) / key actor(s).
-* A string containing the type of item in lower case, for example, book, ebook, periodical, dvd, cd, bluray, etc. This list is not intended to be complete.
+* A string containing the type of item in lower case (one of: academic_paper, audio, book, ebook, ejournal, electronic, journal, map, other, score, video).
 
 ### `list_items` data structure ###
 
@@ -73,6 +73,6 @@ A dictionary with the following keys:
 * **reservations** _(optional)_ - the number of unfufilled reservations.
 * **summary** _(optional)_ - the summary, such as the abstract or blurb.
 * **title** - the title of the item.
-* **type** - the type of item in lower case, for example, book, ebook, periodical, dvd, cd, bluray, etc. This list is not intended to be complete.
+* **type** - the type of item in lower case (one of: academic_paper, audio, book, ebook, ejournal, electronic, journal, map, other, score, video).
 * **url** _(optional)_ - the URL associated with the item.
 * **volume** _(optional)_ - the volume of the publication.
