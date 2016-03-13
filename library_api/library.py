@@ -12,13 +12,15 @@ def library(url):
     webpacpro = 'WebPAC PRO &copy; Innovative Interfaces, Inc.'
     
     r = requests.get(url)
-    if(enterprise in r.text):
+    if enterprise in r.text:
         from library_api.implementations.enterprise import library
-    if(exlibrisprimo in r.text):
+    elif exlibrisprimo in r.text:
         from library_api.implementations.exlibrisprimo import library
-    elif(webpacpro in r.text):
+    elif webpacpro in r.text:
         from library_api.implementations.webpacpro import library
     else:
         raise NotImplementedError
-        
-    return library
+    
+    library_object = library(url)
+    
+    return library_object
