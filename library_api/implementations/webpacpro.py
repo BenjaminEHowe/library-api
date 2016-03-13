@@ -98,7 +98,6 @@ class library:
 		print(result)
 		return result
 
-class _library:
 	def list_items(session):
 		raise NotImplementedError
 		return []
