@@ -45,18 +45,47 @@ class library:
 
 	def get_item(self, id):
 		res = self.session.get('http://library.aston.ac.uk/record=' + id)
+
 		print(res.text)
-		return
+
+		soup = BeautifulSoup(res.text, 'html.parser')
+
+		result = {
+			'author': re.search('<td valign="top" width="20%"  class="bibInfoLabel">Author<\/td>\n<td class="bibInfoData">\n<a href=".*\/browse">(.*)<\/a>', res.text).group(1),
+			'call_number': '',
+			'copies': [
+				{
+					'location': '',
+					'type': '',
+					'available': '',
+					'due': ''
+				}
+			],
+			'copies_available': 0,
+			'copies_total': 0,
+			'date_of_publication': '',
+			'ean': '',
+			'publisher': '',
+			'title': re.search('<td valign="top" width="20%"  class="bibInfoLabel">Title<\/td>\n<td class="bibInfoData">\n<strong>(.*)<\/strong>', res.text).group(1),
+			'type': ''
+		}
+
+		print(result)
+		return result
 
 class _library:
 	def list_items(session):
-		return
+		raise NotImplementedError
+		return []
 
 	def list_reservations(session):
-		return
+		raise NotImplementedError
+		return []
 
 	def renew(session, id):
-		return
+		raise NotImplementedError
+		return false
 
 	def renew_all(session):
-		return
+		raise NotImplementedError
+		return false
